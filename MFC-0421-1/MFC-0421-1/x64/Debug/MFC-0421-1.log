@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  MFC-0421-1View.cpp
+c:\project-vc\mfc-0421-1\mfc-0421-1\mfc-0421-1view.cpp(92): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+c:\project-vc\mfc-0421-1\mfc-0421-1\mfc-0421-1view.cpp(106): warning C4244: “初始化”: 从“INT_PTR”转换到“int”，可能丢失数据
+  MFC-0421-1Doc.cpp
+  MFC-0421-1.cpp
+  MainFrm.cpp
+  正在生成代码...
+  MFC-0421-1.vcxproj -> C:\Project-VC\MFC-0421-1\x64\Debug\MFC-0421-1.exe
+  MFC-0421-1.vcxproj -> C:\Project-VC\MFC-0421-1\x64\Debug\MFC-0421-1.pdb (Partial PDB)
