@@ -1,0 +1,4 @@
+﻿  MFC-0420-1Dlg.cpp
+c:\实验\mfc-0420-1\mfc-0420-1\mfc-0420-1dlg.cpp(213): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  MFC-0420-1.vcxproj -> C:\实验\MFC-0420-1\Debug\MFC-0420-1.exe
+  MFC-0420-1.vcxproj -> C:\实验\MFC-0420-1\Debug\MFC-0420-1.pdb (Partial PDB)
