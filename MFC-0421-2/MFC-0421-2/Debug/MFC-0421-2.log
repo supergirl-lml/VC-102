@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  MFC-0421-2Dlg.cpp
+c:\project-vc\mfc-0421-2\mfc-0421-2\mfc-0421-2dlg.cpp(169): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\project-vc\mfc-0421-2\mfc-0421-2\mfc-0421-2dlg.cpp(170): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+c:\project-vc\mfc-0421-2\mfc-0421-2\mfc-0421-2dlg.cpp(175): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+c:\project-vc\mfc-0421-2\mfc-0421-2\mfc-0421-2dlg.cpp(182): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  MFC-0421-2.cpp
+  正在生成代码...
+  MFC-0421-2.vcxproj -> C:\Project-VC\MFC-0421-2\Debug\MFC-0421-2.exe
+  MFC-0421-2.vcxproj -> C:\Project-VC\MFC-0421-2\Debug\MFC-0421-2.pdb (Partial PDB)
