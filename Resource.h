@@ -1,11 +1,11 @@
 //{{NO_DEPENDENCIES}}
 // 生成的 Microsoft Visual C++ 包含文件。
-// 由 MFC-0504-2.rc 使用
+// 由 MFC-0504-3.rc 使用
 //
 #define IDD_ABOUTBOX				100
 #define IDP_OLE_INIT_FAILED			100
 #define IDR_MAINFRAME				128
-#define IDR_MFC05042TYPE				130
+#define IDR_MFC05043TYPE				130
 
 // 新对象的下一组默认值
 //
