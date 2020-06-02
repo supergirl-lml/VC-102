@@ -11,7 +11,7 @@
 
 #include "MFC-0414-3Doc.h"
 #include "MFC-0414-3View.h"
-
+#include"MyDlg.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -23,6 +23,7 @@ IMPLEMENT_DYNCREATE(CMFC04143View, CView)
 
 BEGIN_MESSAGE_MAP(CMFC04143View, CView)
 	ON_WM_LBUTTONDBLCLK()
+	ON_COMMAND(ID_32771, &CMFC04143View::On32771)
 END_MESSAGE_MAP()
 
 // CMFC04143View 构造/析构
@@ -89,5 +90,19 @@ void CMFC04143View::OnLButtonDblClk(UINT nFlags, CPoint point)
 	int r = cfd.DoModal();
 	file = cfd.GetPathName();
 	CClientDC dc(this);
+	dc.TextOutW(100, 100, file);
 	CView::OnLButtonDblClk(nFlags, point);
+}
+
+
+void CMFC04143View::On32771()
+{
+	// TODO: 在此添加命令处理程序代码
+	MyDlg md;
+	UpdateData(true);
+	md.a=file;
+	UpdateData(false);
+	int t = md.DoModal();
+	if (t == IDOK) {
+	}
 }

@@ -39,6 +39,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
+	afx_msg void On32771();
 };
 
 #ifndef _DEBUG  // MFC-0414-3View.cpp 中的调试版本

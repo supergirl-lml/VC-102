@@ -189,6 +189,7 @@
     <ClInclude Include="MFC-0414-3.h" />
     <ClInclude Include="MFC-0414-3Doc.h" />
     <ClInclude Include="MFC-0414-3View.h" />
+    <ClInclude Include="MyDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -198,6 +199,7 @@
     <ClCompile Include="MFC-0414-3.cpp" />
     <ClCompile Include="MFC-0414-3Doc.cpp" />
     <ClCompile Include="MFC-0414-3View.cpp" />
+    <ClCompile Include="MyDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
