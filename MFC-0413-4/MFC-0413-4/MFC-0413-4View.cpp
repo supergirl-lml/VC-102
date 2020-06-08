@@ -87,4 +87,5 @@ void CMFC04134View::OnPopout()
 	// TODO: 在此添加命令处理程序代码
 	MyDlg dlg;
 	int t = dlg.DoModal();
+
 }

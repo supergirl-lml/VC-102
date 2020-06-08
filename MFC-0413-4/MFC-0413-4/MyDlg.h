@@ -25,4 +25,5 @@ public:
 	int b;
 	CString c;
 	afx_msg void OnBnClickedButton1();
+	virtual BOOL OnInitDialog();
 };

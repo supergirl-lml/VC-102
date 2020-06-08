@@ -51,3 +51,17 @@ void MyDlg::OnBnClickedButton1()
 	c += s;
 	UpdateData(false);
 }
+
+
+BOOL MyDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  在此添加额外的初始化
+	a = (_T("你好大家"));
+	b=100;
+	c = (_T(""));
+	UpdateData(false);
+	return TRUE;  // return TRUE unless you set the focus to a control
+				  // 异常: OCX 属性页应返回 FALSE
+}
