@@ -17,10 +17,11 @@ public:
 
 // 操作
 public:
-	CImage img;
-	int rect_w, rect_h;//客户区宽高
-	int img_w, img_h;
+	bool flag;
+	int h, w;
 	int sx, sy;//图片位置
+	CString filename;
+	CImage img;
 // 重写
 public:
 	virtual void OnDraw(CDC* pDC);  // 重写以绘制该视图

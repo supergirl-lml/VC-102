@@ -23,6 +23,7 @@ IMPLEMENT_DYNCREATE(CMFCTest20View, CView)
 
 BEGIN_MESSAGE_MAP(CMFCTest20View, CView)
 	ON_COMMAND(ID_FILE_OPEN, &CMFCTest20View::OnFileOpen)
+	ON_WM_PAINT()
 END_MESSAGE_MAP()
 
 // CMFCTest20View 构造/析构
@@ -53,11 +54,10 @@ void CMFCTest20View::OnDraw(CDC* pDC)
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-	/*CDC MemDC;
-	MemDC.CreateCompatibleDC(NULL);
-	MemDC.SelectObject(img);
-	pDC->BitBlt(img_w,img_h,0,0,&MemDC, 0,0,SRCCOPY);*/
-	//img.Draw(pDC->m_hDC, 0, 0, img_w, img_h);
+	if (flag == true) {
+        img.Draw(pDC->m_hDC, sx, sy, w, h);
+	}
+	
 	// TODO: 在此处为本机数据添加绘制代码
 }
 
@@ -89,52 +89,34 @@ CMFCTest20Doc* CMFCTest20View::GetDocument() const // 非调试版本是内联的
 void CMFCTest20View::OnFileOpen()
 {
 	// TODO: 在此添加命令处理程序代码
+	flag = true;
 	CFileDialog cfd(true);
 	int r = cfd.DoModal();
 	CClientDC dc(this);
-	if (r == IDOK)
+	if (r == IDOK)//如果退出对话框时选项为OK的话
 	{
-		CString filename = cfd.GetPathName();
-		//CImage img;
+	    filename = cfd.GetPathName();
 		img.Load(filename);
-		//int rect_w, rect_h;//客户区宽高
-		//int img_w, img_h;
-	//	int sx, sy;//图片位置
+		CRect cr;
+		GetClientRect(&cr);
 
-		CRect rect;
-		GetClientRect(&rect);//获取客户区大小
-		rect_w = rect.Width();
-		rect_h = rect.Height();
+		float cr_ratio = 1.0 * cr.Width() / cr.Height();
+		float img_ratio = 1.0 * img.GetWidth() / img.GetHeight();
 
-		img_w = img.GetWidth();
-		img_h = img.GetHeight();
-		if (img_w < rect_w & img_h < rect_h)
+		if (cr_ratio > img_ratio)
+		{//客户区宽高比大于图像
+			h = cr.Height();//图片高度
+			w = img_ratio * h;//图片宽度
+			sx = (cr.Width() - w) / 2;
+			sy = 0;
+		}
+		else
 		{
-			sx = (rect_w - img_w) / 2;
-			sy = (rect_h - img_h) / 2;
-			
-		}
-		else {
-			
-			float rect_ratio = 1.0*rect.Width() / rect.Height();//客户区宽高比
-			float img_ratio = 1.0*img.GetWidth() / img.GetHeight();//图像宽高比
-
-			if (rect_ratio > img_ratio)
-			{
-				img_h = rect.Height();
-			    img_w = img_ratio*img_h;
-			    sx = (rect.Width() - img_w) / 2;
-			    sy = 0;
-			}
-			else
-			{
-			img_w = rect.Width();
-			img_h = img_w / img_ratio;
+			w = cr.Width();
+			h = w / img_ratio;
 			sx = 0;
-			sy = (rect.Height() - img_h) / 2;
-			}
+			sy = (cr.Height() - h) / 2;
 		}
-		img.Draw(dc.m_hDC, sx, sy, img_w,img_h);
-		}
-	//InvalidateRect(NULL, TRUE);
+		img.Draw(dc.m_hDC, sx, sy, w, h);
 	}
+}
